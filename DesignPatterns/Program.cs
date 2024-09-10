@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPattern.StrategyPattern;
 using DesignPatterns.SingletonPattern;
 
 namespace DesignPatterns
@@ -8,7 +9,10 @@ namespace DesignPatterns
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Singleton Pattern");
+      var context = new Context(new CarStrategy());
+      context.Run();
+      context.Strategy = new BicycleStrategy();
+      context.Run();
     }
   }
 }
