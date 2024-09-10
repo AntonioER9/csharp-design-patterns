@@ -11,6 +11,7 @@ namespace DesignPatterns.StatePattern
         {
             Console.WriteLine($"Se le pone dinero a su saldo {amount}");
             customerContext.Residue = amount;
+            customerContext.SetState(new NotDebtorState());
         }
     }
 }

@@ -9,7 +9,19 @@ namespace DesignPatterns.StatePattern
     {
         public void Action(CustomerContext customerContext, decimal amount)
         {
-            throw new NotImplementedException();
+            if (amount <= customerContext.Residue)
+            {
+                Console.WriteLine($"Se le descuenta {amount} de su saldo");
+                customerContext.Discount(amount);
+                if (customerContext.Residue <= 0)
+                {
+                    customerContext.SetState(new DebtorState());
+                }
+            }
+            else
+            {
+                Console.WriteLine("No se puede descontar más de lo que tiene");
+            }
         }
     }
 }

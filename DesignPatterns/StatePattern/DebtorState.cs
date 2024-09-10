@@ -9,7 +9,7 @@ namespace DesignPatterns.StatePattern
     {
         public void Action(CustomerContext customerContext, decimal amount)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("No se puede descontar más de lo que tiene");
         }
     }
 }
