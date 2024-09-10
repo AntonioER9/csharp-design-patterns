@@ -1,7 +1,4 @@
 ﻿using System;
-using DesignPattern.StrategyPattern;
-using DesignPatterns.BuilderPattern;
-using DesignPatterns.SingletonPattern;
 
 namespace DesignPatterns
 {
@@ -10,12 +7,7 @@ namespace DesignPatterns
   {
     static void Main(string[] args)
     {
-      var builder = new PreparedAlcoholicDrinkConcreteBuilder();
-      var director = new Director(builder);
 
-      director.PrepareVodka();
-      var preparedDrink = builder.GetPreparedDrink();
-      Console.WriteLine(preparedDrink.Result);
     }
   }
 }
